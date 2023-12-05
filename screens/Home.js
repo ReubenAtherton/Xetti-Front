@@ -99,10 +99,17 @@ const Header = ({ viewAll }) => {
   return (
     <View style={styles.header}>
       <View style={{ flex: 1, flexDirection: "row" }}>
-        <View style={{ flex: 6, alignSelf: "flex-end", marginBottom: 10 }}>
-          <Text style={styles.headerText}>Betti</Text>
+        <View
+          style={{
+            flex: 6,
+            alignSelf: "flex-end",
+            marginStart: "3%",
+            marginBottom: "2.5%",
+          }}
+        >
+          <Text style={styles.headerText}>xetti</Text>
         </View>
-        <View style={{ flex: 1, alignSelf: "flex-end", marginBottom: 14 }}>
+        <View style={{ flex: 1, alignSelf: "flex-end", marginBottom: "3%" }}>
           <TouchableOpacity onPress={() => viewAll()}>
             <Ionicons name="person-add" size={30} color="white" />
           </TouchableOpacity>
@@ -119,7 +126,12 @@ const Body = ({ following, handleRefresh, viewProfile }) => {
     <View style={{ width: "100%", flex: 1 }}>
       <View style={{ flexDirection: "row" }}>
         <Text
-          style={{ fontSize: 20, marginBottom: 25, fontWeight: "500", flex: 6 }}
+          style={{
+            fontSize: 20,
+            marginBottom: "4%",
+            fontWeight: "500",
+            flex: 6,
+          }}
         >
           {" "}
           Friends{" "}
@@ -144,7 +156,7 @@ const Body = ({ following, handleRefresh, viewProfile }) => {
                   size={27}
                   color="black"
                   style={{
-                    paddingRight: 8,
+                    paddingRight: "22%",
                     alignSelf: "center",
                     opacity: 1,
                   }}
@@ -179,91 +191,62 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
+
   header: {
     backgroundColor: "#5DB075",
     width: "100%",
     flex: 1,
   },
+
   headerText: {
     fontSize: 32,
-    marginLeft: 12,
+    marginLeft: "3.5%",
     fontWeight: "bold",
     color: "white",
   },
 
   body: {
     flex: 6,
-    paddingHorizontal: 20,
-    paddingTop: 20,
+    paddingHorizontal: "4%",
+    marginTop: "6%",
   },
-  searchInput: {
-    flexDirection: "row",
-    alignItems: "center",
-    height: 40,
-    borderColor: "gray",
-    borderWidth: 1,
-    borderRadius: 10,
-    marginBottom: 20,
-    paddingHorizontal: 10,
-  },
-  scrollView: {
-    flex: 1,
-  },
-  scrollContainer: {
-    flexGrow: 1,
-  },
+
   userCard: {
     flexDirection: "row",
     alignItems: "center",
-    marginVertical: 5,
-    paddingVertical: 5,
+    marginVertical: "1%",
+    paddingVertical: "2%",
     borderBottomWidth: 0.3,
-    paddingBottom: 10,
+    paddingBottom: "3%",
   },
+
   lastUserCard: {
     borderBottomWidth: 0.3,
-    paddingBottom: 10,
+    paddingBottom: "3%",
   },
+
   userCardContent: {
     flexDirection: "row",
     flex: 1,
     alignItems: "center",
   },
-  userInfo: {
-    flex: 1,
-    marginLeft: 10,
-  },
+
   name: {
     fontSize: 17,
   },
+
   userName: {
-    paddingTop: 2,
+    paddingTop: "1%",
     fontSize: 14,
     opacity: 0.5,
-  },
-  followButton: {
-    borderRadius: 14,
-    backgroundColor: "rgba(93, 176, 117, 0.7)",
-    paddingHorizontal: 8,
-    paddingVertical: 6,
-  },
-  followButtonText: {
-    fontSize: 15,
-    fontWeight: "400",
-    color: "black",
   },
 
   dots: {
     alignSelf: "flex-end",
-    padding: 3,
-    paddingHorizontal: 8,
-    marginRight: 5,
-    //borderWidth: 0.7,
+    padding: "3%",
+    paddingHorizontal: "9%",
+    marginRight: "5%",
     borderRadius: 14,
-    //backgroundColor: "rgba(93,176,117,0.5)",
     backgroundColor: "rgba(183,183,183,0.5)",
-
-    //paddingHorizontal: 4,
-    //paddingVertical: 7,
   },
 });

@@ -109,7 +109,7 @@ export default function AddFriends({ navigation }) {
             name="search"
             size={24}
             color="black"
-            style={{ alignSelf: "center", paddingRight: 10 }}
+            style={{ alignSelf: "center", paddingRight: "4%" }}
           />
           <TextInput
             placeholder="Search Users"
@@ -139,7 +139,7 @@ export default function AddFriends({ navigation }) {
                   size={30}
                   color="black"
                   style={{
-                    paddingRight: 8,
+                    paddingRight: "2%",
                     alignSelf: "center",
                     opacity: 1,
                   }}
@@ -161,7 +161,6 @@ export default function AddFriends({ navigation }) {
           ))}
         </ScrollView>
       </View>
-      <View style={styles.footer}></View>
     </View>
   );
 }
@@ -171,72 +170,81 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
+
   header: {
     backgroundColor: "#5DB075",
-    height: 100,
+    height: "13.85%",
   },
+
   body: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingTop: 20,
+    paddingHorizontal: "4%",
+    marginTop: "6%",
   },
+
   searchInput: {
     flexDirection: "row",
     alignItems: "center",
-    height: 40,
+    height: "7%",
     borderColor: "gray",
     borderWidth: 1,
     borderRadius: 10,
-    marginBottom: 20,
-    paddingHorizontal: 10,
+    marginBottom: "4%",
+    paddingHorizontal: "3%",
   },
+
   scrollView: {
     flex: 1,
   },
+
   scrollContainer: {
     flexGrow: 1,
   },
+
   userCard: {
     flexDirection: "row",
     alignItems: "center",
-    marginVertical: 5,
-    paddingVertical: 5,
+    marginVertical: "1%",
+    paddingVertical: "2%",
     borderBottomWidth: 0.3,
-    paddingBottom: 10,
+    paddingBottom: "3%",
   },
+
   lastUserCard: {
     borderBottomWidth: 0.3,
-    paddingBottom: 10,
+    paddingBottom: "3%",
   },
+
   userCardContent: {
     flexDirection: "row",
     flex: 1,
     alignItems: "center",
   },
+
   userInfo: {
     flex: 1,
-    marginLeft: 10,
+    marginLeft: "1.5%",
   },
+
   name: {
     fontSize: 17,
   },
+
   userName: {
-    paddingTop: 2,
+    paddingTop: "1%",
     fontSize: 14,
     opacity: 0.5,
   },
+
   followButton: {
     borderRadius: 14,
     backgroundColor: "rgba(93, 176, 117, 0.7)",
-    paddingHorizontal: 8,
-    paddingVertical: 6,
+    paddingHorizontal: "3%",
+    paddingVertical: "1.5%",
   },
   followButtonText: {
     fontSize: 15,
     fontWeight: "400",
     color: "black",
-  },
-  footer: {
-    height: 20,
   },
 });

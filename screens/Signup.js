@@ -81,7 +81,7 @@ export default Signup = ({ navigation }) => {
             style={{
               fontSize: 18,
               opacity: 0.6,
-              marginTop: 10,
+              marginTop: "3%",
             }}
           >
             Please create an account to continue
@@ -93,7 +93,7 @@ export default Signup = ({ navigation }) => {
             name="ios-person"
             size={24}
             color="black"
-            style={{ paddingLeft: 12 }}
+            style={styles.icons}
           />
           <TextInput
             style={styles.TextInput}
@@ -111,7 +111,7 @@ export default Signup = ({ navigation }) => {
             name="email"
             size={24}
             color="black"
-            style={{ paddingLeft: 12 }}
+            style={styles.icons}
           />
           <TextInput
             style={styles.TextInput}
@@ -125,12 +125,7 @@ export default Signup = ({ navigation }) => {
         </View>
 
         <View style={styles.inputView}>
-          <Entypo
-            name="lock"
-            size={24}
-            color="black"
-            style={{ paddingLeft: 12 }}
-          />
+          <Entypo name="lock" size={24} color="black" style={styles.icons} />
           <TextInput
             style={styles.TextInput}
             placeholder="Password"
@@ -173,21 +168,26 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "700",
   },
+
+  icons: {
+    paddingLeft: "5%",
+  },
+
   inputView: {
     borderColor: "black",
     borderWidth: 1,
     borderRadius: 8,
     width: "100%",
     height: "9.5%",
-    marginVertical: 12,
+    marginVertical: "3.5%",
     alignItems: "center",
     flexDirection: "row",
   },
+
   TextInput: {
-    height: 40,
+    height: "100%",
     flex: 1,
-    paddingHorizontal: 5,
-    marginHorizontal: 10,
+    marginHorizontal: "4%",
     fontSize: 17,
   },
 

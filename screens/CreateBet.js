@@ -107,30 +107,30 @@ export default function CreateBet() {
               backgroundColor: "white",
               width: "100%",
               alignItems: "center",
-              marginTop: 70,
-              paddingHorizontal: 20,
+              marginTop: "18%",
+              paddingHorizontal: "5%",
             }}
           >
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
               <View
                 style={{
-                  marginTop: 30,
+                  marginTop: "9%",
                   borderColor: "black",
                   borderWidth: 1,
                   borderRadius: 8,
                   width: "60%",
-                  height: 70,
+                  height: "11%",
                   flexDirection: "row",
                   justifyContent: "center",
                   alignItems: "center",
-                  paddingHorizontal: 10,
+                  paddingLeft: "5%",
                 }}
               >
                 <FontAwesome5
                   name="pound-sign"
                   size={30}
                   color="black"
-                  style={{ marginRight: 10, marginLeft: 7 }}
+                  style={{ marginRight: "1%" }}
                 />
 
                 <TextInput
@@ -138,8 +138,8 @@ export default function CreateBet() {
                   style={{
                     flex: 1,
                     fontSize: 40,
-                    height: 50,
-                    paddingHorizontal: 10,
+                    height: "90%",
+                    paddingHorizontal: "10%",
                     textAlign: "right",
                   }}
                   value={amount}
@@ -151,11 +151,11 @@ export default function CreateBet() {
             <TouchableOpacity
               style={{
                 borderRadius: 8,
-                height: 60,
+                height: "10%",
                 width: "40%",
                 alignItems: "center",
                 justifyContent: "center",
-                marginTop: 50,
+                marginTop: "15%",
                 backgroundColor: "#5DB075",
                 borderColor: "black",
                 borderWidth: 1,

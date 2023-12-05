@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   headerText: {
     color: "white",
     fontSize: 30,
-    marginBottom: 20,
+    marginBottom: "4%",
   },
   body: {
     flex: 6,

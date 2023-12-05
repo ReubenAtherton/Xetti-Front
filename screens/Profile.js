@@ -109,7 +109,7 @@ const ProfilePicture = ({ user }) => {
   return (
     <View
       style={{
-        width: 110,
+        width: "31%",
         height: 110,
         borderRadius: 15,
         justifyContent: "center",
@@ -117,7 +117,7 @@ const ProfilePicture = ({ user }) => {
         backgroundColor: "rgba(93, 176, 117, 1)",
       }}
     >
-      <FontAwesome5 name="coins" size={20} color="white" style={{}} />
+      <FontAwesome5 name="coins" size={20} color="white" />
       <Text>{/* space */}</Text>
       <Text style={{ fontSize: 23, fontWeight: "400", color: "white" }}>
         {user.accountValue.toFixed(2)}
@@ -127,27 +127,13 @@ const ProfilePicture = ({ user }) => {
 };
 
 const HeaderCard = ({ user, handleRefresh }) => {
-  // if needed in the future
-  const refreshButton = () => {
-    return (
-      <View style={{ alignSelf: "center", position: "absolute", right: 6 }}>
-        <TouchableOpacity
-          style={{ paddingRight: 20, alignSelf: "center" }}
-          onPress={handleRefresh}
-        >
-          <FontAwesome name="refresh" size={24} color="black" />
-        </TouchableOpacity>
-      </View>
-    );
-  };
-
   const fontSize = user.name.length > 15 ? 20 - user.name.length / 10 : 25;
 
   const text = StyleSheet.create({
     name: {
       fontSize,
       alignSelf: "center",
-      marginTop: 10,
+      marginTop: "4%",
       color: "black",
       fontWeight: "400",
     },
@@ -167,7 +153,9 @@ const HeaderCard = ({ user, handleRefresh }) => {
   });
 
   return (
-    <View style={{ flex: 1, borderWidth: 0, borderRadius: 10, marginLeft: 10 }}>
+    <View
+      style={{ flex: 1, borderWidth: 0, borderRadius: 10, marginLeft: "3%" }}
+    >
       <View style={{ flexDirection: "row", flex: 1, alignSelf: "center" }}>
         <View style={{ flex: 1, alignSelf: "center" }}>
           <Text style={text.name} numberOfLines={1}>
@@ -216,7 +204,7 @@ const Body = ({ id, bets, handleRefresh, navigation }) => {
     return (
       <View
         style={{
-          height: 40,
+          height: "35%",
           backgroundColor: "rgba(93, 176, 117, 0.55)", // Use rgba to set background color with opacity
           borderColor: "black",
           borderTopLeftRadius: 10.3,
@@ -230,7 +218,7 @@ const Body = ({ id, bets, handleRefresh, navigation }) => {
           name="left"
           style={{
             flex: 1,
-            paddingLeft: 10,
+            paddingLeft: "4%",
           }}
         >
           <Text>{bet_id}</Text>
@@ -238,26 +226,21 @@ const Body = ({ id, bets, handleRefresh, navigation }) => {
         <View
           name="right"
           style={{
-            paddingRight: 12,
+            paddingRight: "4%",
             flexDirection: "row",
             alignItems: "center",
           }}
         >
           <Text
             style={{
-              paddingRight: 7,
+              paddingRight: "2%",
               color: "black", // Set the text color to default (no opacity change)
               fontSize: 16,
               fontWeight: "500",
             }}
           >
             {bet_amount.toFixed(2)}{" "}
-            <FontAwesome5
-              name="coins"
-              size={15}
-              color="black"
-              style={{ marginRight: 5 }}
-            />
+            <FontAwesome5 name="coins" size={15} color="black" />
           </Text>
         </View>
       </View>
@@ -288,9 +271,8 @@ const Body = ({ id, bets, handleRefresh, navigation }) => {
           flexDirection: "row",
           alignItems: "center",
           borderBottomColor: "black",
-          //borderRightWidth: 1,
           backgroundColor: "rgba(194, 228, 203, 0.45)", // Use rgba to set background color with opacity
-          paddingHorizontal: 15,
+          paddingHorizontal: "4%",
         }}
       >
         <View name="left" style={{ flex: 1 }}>
@@ -334,7 +316,7 @@ const Body = ({ id, bets, handleRefresh, navigation }) => {
           <View style={{ flex: 9 }}>
             <Text
               style={{
-                paddingLeft: 15,
+                paddingLeft: "5%",
                 opacity: 0.6,
               }}
             >
@@ -371,7 +353,7 @@ const Body = ({ id, bets, handleRefresh, navigation }) => {
         name="ActiveBets"
         style={{
           flex: 1,
-          marginVertical: 20,
+          marginVertical: "5%",
           width: "100%",
         }}
       >
@@ -427,7 +409,7 @@ const Body = ({ id, bets, handleRefresh, navigation }) => {
                           borderRadius: 10,
 
                           height: 120,
-                          marginVertical: 6,
+                          marginVertical: "2%",
                           justifyContent: "flex-start",
                           alignItems: "center",
                         }}
@@ -479,9 +461,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 15,
-    paddingTop: 60,
-    paddingBottom: 2,
+    paddingHorizontal: "4%",
+    paddingTop: "15%",
+    paddingBottom: "0.5%",
     backgroundColor: "rgba(93, 176, 117, 0)",
   },
 
@@ -489,9 +471,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 15,
-    paddingTop: 60,
-    paddingBottom: 2,
+    paddingHorizontal: "4%",
+    paddingTop: "15%",
+    paddingBottom: "0.5%",
     backgroundColor: "rgba(93, 176, 117, 0)",
   },
 
@@ -500,21 +482,17 @@ const styles = StyleSheet.create({
     flex: 5,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 15,
+    paddingHorizontal: "4%",
   },
   tabContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: 10,
+    marginBottom: "3%",
     borderWidth: 0,
-    height: 35,
+    height: "6%",
   },
   tabButton: {
     flex: 1,
-    paddingVertical: 5,
-    paddingHorizontal: 20,
-    borderWidth: 0,
-    borderColor: "#000",
     backgroundColor: "rgba(255, 255, 255, 1)", // Use rgba to set the background color with opacity
     borderRadius: 20,
     alignItems: "center",
@@ -540,6 +518,6 @@ const styles = StyleSheet.create({
   listItem: {
     width: "100%",
     fontSize: 16,
-    marginBottom: 12,
+    marginBottom: "5%",
   },
 });
