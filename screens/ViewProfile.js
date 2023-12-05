@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { StatusBar } from "expo-status-bar";
+
 import {
   StyleSheet,
   Text,
@@ -78,6 +80,7 @@ export default function ViewProfile({ route }) {
         <Text></Text> // Show a loading indicator
       ) : (
         <>
+          <StatusBar style="auto" />
           <Header user={user} handleRefresh={handleRefresh} />
           <Body id={id} bets={bets} handleRefresh={handleRefresh} />
         </>

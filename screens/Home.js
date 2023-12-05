@@ -79,6 +79,7 @@ export default function Home({ navigation }) {
         <Text></Text> // Show a loading indicator
       ) : (
         <>
+          <StatusBar style="auto" />
           <Header viewAll={viewAll} />
           <View style={styles.body}>
             <Body

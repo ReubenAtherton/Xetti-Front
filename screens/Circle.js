@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
 
 import {
   useFonts,
@@ -17,6 +18,7 @@ const Circle = () => {
 
   return (
     <View style={style.container}>
+      <StatusBar style="auto" />
       <FontAwesome5 name="handshake" size={60} color="white" />
       <Text style={style.text}>xetti</Text>
     </View>

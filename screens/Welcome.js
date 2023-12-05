@@ -17,6 +17,7 @@ export default Signup = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar style="auto" />
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>Welcome to Betti</Text>
         <Text style={styles.text}>

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { StatusBar } from "expo-status-bar";
+
 import {
   StyleSheet,
   Text,
@@ -99,6 +101,7 @@ export default function AddFriends({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <StatusBar style="auto" />
       <View style={styles.header}></View>
       <View style={styles.body}>
         <View style={styles.searchInput}>

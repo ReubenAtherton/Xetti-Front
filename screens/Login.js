@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   Text,
@@ -66,6 +67,7 @@ export default Login = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+      <StatusBar style="auto" />
       <KeyboardAwareScrollView
         contentContainerStyle={styles.container}
         extraScrollHeight={-150}

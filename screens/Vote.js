@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { StatusBar } from "expo-status-bar";
 
 export default function Vote({ route, navigation }) {
   const [id, setUserID] = useState("");
@@ -139,6 +140,7 @@ export default function Vote({ route, navigation }) {
 
   return (
     <View style={styles.container}>
+      <StatusBar style="auto" />
       <Header />
       <View style={styles.body}>
         <TouchableOpacity style={{ flex: 1 }} onPress={() => vote(true)}>

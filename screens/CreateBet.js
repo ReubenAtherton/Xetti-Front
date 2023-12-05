@@ -90,6 +90,7 @@ export default function CreateBet() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar style="auto" />
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View
           style={{

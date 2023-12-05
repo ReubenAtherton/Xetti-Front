@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { StyleSheet, View, TouchableOpacity, Text, FlatList } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Text,
+  FlatList,
+} from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 export default function Profile() {
-
-
   const [activeTab, setActiveTab] = useState("active");
 
   // Sample data for active and history lists
@@ -16,6 +21,7 @@ export default function Profile() {
 
   return (
     <View style={styles.container}>
+      <StatusBar style="auto" />
       <View style={styles.tabContainer}>
         <TouchableOpacity
           style={[
