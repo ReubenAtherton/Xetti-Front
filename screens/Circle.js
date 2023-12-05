@@ -18,7 +18,7 @@ const Circle = () => {
   return (
     <View style={style.container}>
       <FontAwesome5 name="handshake" size={60} color="white" />
-      <Text style={style.text}>xetti</Text>
+      <Text style={style.text}>xetti test</Text>
     </View>
   );
 };
