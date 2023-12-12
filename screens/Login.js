@@ -33,7 +33,7 @@ export default Login = ({ navigation }) => {
 
     try {
       const response = await fetch(
-        "http://10.159.143.121:8081/api/auth/signin",
+        "http://10.159.143.121:8080/api/auth/signin",
         {
           method: "POST",
           headers: {

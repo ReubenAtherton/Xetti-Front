@@ -36,7 +36,7 @@ export default function Home({ navigation }) {
   const fetchFollowingUsers = async () => {
     try {
       const response = await fetch(
-        `http://10.159.143.121:8081/api/auth/show-following/${id}`
+        `http://10.159.143.121:8080/api/auth/show-following/${id}`
       );
       if (response.ok) {
         const data = await response.json();

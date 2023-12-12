@@ -45,7 +45,7 @@ export default function Profile({ navigation }) {
   const fetchUser = async () => {
     try {
       const response = await fetch(
-        `http://10.159.143.121:8081/api/auth/user/${id}`
+        `http://10.159.143.121:8080/api/auth/user/${id}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -60,7 +60,7 @@ export default function Profile({ navigation }) {
     }
   };
 
-  const bet_url = `http://10.159.143.121:8081/api/auth/get-bets/${id}`;
+  const bet_url = `http://10.159.143.121:8080/api/auth/get-bets/${id}`;
 
   const fetchBets = async () => {
     try {
