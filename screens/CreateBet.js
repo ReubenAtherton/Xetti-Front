@@ -37,7 +37,7 @@ export default function CreateBet() {
 
     try {
       const response = await fetch(
-        "http://10.159.143.121:8080/api/auth/createBet",
+        "http://10.159.139.81:8081/api/auth/createBet",
         {
           method: "POST",
           headers: {

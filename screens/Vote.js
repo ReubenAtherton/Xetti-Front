@@ -59,7 +59,7 @@ export default function Vote({ route, navigation }) {
       userIds: userIds,
     };
 
-    return fetch(`http://10.159.143.121:8080/api/auth/get-user-names`, {
+    return fetch(`http://10.159.139.81:8081/api/auth/get-user-names`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -74,7 +74,7 @@ export default function Vote({ route, navigation }) {
       userIds: userIds,
     };
 
-    return fetch(`http://10.159.143.121:8080/api/auth/get-user-names`, {
+    return fetch(`http://10.159.139.81:8081/api/auth/get-user-names`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -95,7 +95,7 @@ export default function Vote({ route, navigation }) {
     const jsonVoteData = JSON.stringify(voteDto);
 
     try {
-      const response = await fetch("http://10.159.143.121:8080/api/auth/vote", {
+      const response = await fetch("http://10.159.139.81:8081/api/auth/vote", {
         method: "POST",
         headers: {
           Accept: "application/json",

@@ -38,7 +38,7 @@ export default Signup = ({ navigation }) => {
 
     try {
       const response = await fetch(
-        "http://10.159.143.121:8080/api/auth/signup",
+        "http://10.159.139.81:8081/api/auth/signup",
         {
           method: "POST",
           headers: {

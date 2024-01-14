@@ -33,7 +33,7 @@ export default Login = ({ navigation }) => {
 
     try {
       const response = await fetch(
-        "http://10.159.143.121:8080/api/auth/signin",
+        "http://10.159.139.81:8081/api/auth/signin",
         {
           method: "POST",
           headers: {
@@ -170,6 +170,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "700",
   },
+
   inputView: {
     borderColor: "black",
     borderWidth: 1,
