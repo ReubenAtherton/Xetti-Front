@@ -32,17 +32,14 @@ export default Login = ({ navigation }) => {
     const jsonUserData = JSON.stringify(userData);
 
     try {
-      const response = await fetch(
-        "http://10.159.143.121:8080/api/auth/signin",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: jsonUserData,
-        }
-      );
+      const response = await fetch("http://172.20.10.9:8080/api/auth/signin", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: jsonUserData,
+      });
 
       console.log("Response Status Code:", response.status);
 
@@ -199,7 +196,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: "15%",
-    backgroundColor: "#5DB075",
+    backgroundColor: "#4dd173",
     borderColor: "black",
     borderWidth: 1,
   },

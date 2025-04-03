@@ -1,24 +1,23 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from "react-native";
 import Home from "../screens/Home";
-import ViewProfile from "../screens/ViewProfile"
+import ViewProfile from "../screens/ViewProfile";
 import Profile from "../screens/Profile";
 import Vote from "../screens/Vote";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
 import CreateBet from "../screens/CreateBet";
 import AddFriends from "../screens/AddFriends";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-
 function HomeTabGroup() {
   return (
     <Tab.Navigator
-      screenOptions={{ 
+      screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
       }}
@@ -29,7 +28,7 @@ function HomeTabGroup() {
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons
-              name={focused ? 'ios-home' : 'ios-home-outline'}
+              name={focused ? "home" : "home-outline"}
               size={25}
               color={focused ? "#5b8969" : "black"}
               style={styles.tabIcon}
@@ -43,7 +42,7 @@ function HomeTabGroup() {
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons
-              name={focused ? 'add-circle' : 'add-circle-outline'}
+              name={focused ? "add-circle" : "add-circle-outline"}
               size={40}
               color={focused ? "#5b8969" : "black"}
               style={styles.tabIcon}
@@ -57,7 +56,7 @@ function HomeTabGroup() {
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons
-              name={focused ? 'ios-person' : 'ios-person-outline'}
+              name={focused ? "person" : "person-outline"}
               size={25}
               color={focused ? "#5b8969" : "black"}
               style={styles.tabIcon}
@@ -70,19 +69,12 @@ function HomeTabGroup() {
 }
 
 const styles = StyleSheet.create({
-  tabBar: {
-
-  },
-  tabItem: {
-
-  },
-  tabIcon: {
-
-  },
+  tabBar: {},
+  tabItem: {},
+  tabIcon: {},
 });
 
 function HomeStackGroup() {
-
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -110,13 +102,11 @@ function HomeStackGroup() {
           headerTransparent: true,
         }}
       />
-
     </Stack.Navigator>
   );
 }
 
 function ProfileStackGroup() {
-
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -139,11 +129,9 @@ function ProfileStackGroup() {
   );
 }
 
-
-
 export default function HomeNav() {
   return (
-    <View style={{ flex: 1, width: '100%' }}>
+    <View style={{ flex: 1, width: "100%" }}>
       <NavigationContainer independent={true}>
         <HomeTabGroup />
       </NavigationContainer>

@@ -37,7 +37,7 @@ export default function CreateBet() {
 
     try {
       const response = await fetch(
-        "http://10.159.143.121:8080/api/auth/createBet",
+        "http://172.20.10.9:8080/api/auth/createBet",
         {
           method: "POST",
           headers: {
@@ -156,7 +156,7 @@ export default function CreateBet() {
                 alignItems: "center",
                 justifyContent: "center",
                 marginTop: "15%",
-                backgroundColor: "#5DB075",
+                backgroundColor: "#4dd173",
                 borderColor: "black",
                 borderWidth: 1,
               }}

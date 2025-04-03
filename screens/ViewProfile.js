@@ -19,6 +19,7 @@ export default function ViewProfile({ route }) {
   const [user, setUser] = useState("");
   const [id, setUserID] = useState("");
   const [bets, setBets] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
 
   const idview = route.params.idview;
 
@@ -29,8 +30,15 @@ export default function ViewProfile({ route }) {
   }, []);
 
   const handleRefresh = async () => {
-    await fetchUser();
-    await fetchBets();
+    try {
+      setRefreshing(true);
+      await fetchUser();
+      await fetchBets();
+    } catch (error) {
+      console.error("Error refreshing data:", error);
+    } finally {
+      setRefreshing(false);
+    }
   };
 
   useEffect(() => {
@@ -43,7 +51,7 @@ export default function ViewProfile({ route }) {
   const fetchUser = async () => {
     try {
       const response = await fetch(
-        `http://10.159.143.121:8080/api/auth/user/${id}`
+        `http://172.20.10.9:8080/api/auth/user/${id}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -58,7 +66,7 @@ export default function ViewProfile({ route }) {
     }
   };
 
-  const bet_url = `http://10.159.143.121:8080/api/auth/get-bets/${id}`;
+  const bet_url = `http://172.20.10.9:8080/api/auth/get-bets/${id}`;
 
   const fetchBets = async () => {
     try {
@@ -82,7 +90,12 @@ export default function ViewProfile({ route }) {
         <>
           <StatusBar style="auto" />
           <Header user={user} handleRefresh={handleRefresh} />
-          <Body id={id} bets={bets} handleRefresh={handleRefresh} />
+          <Body
+            id={id}
+            bets={bets}
+            handleRefresh={handleRefresh}
+            refreshing={refreshing}
+          />
         </>
       )}
     </View>
@@ -191,7 +204,7 @@ const HeaderCard = ({ user, handleRefresh }) => {
   );
 };
 
-const Body = ({ id, bets, handleRefresh }) => {
+const Body = ({ id, bets, handleRefresh, refreshing }) => {
   const BetCardHeader = ({ bet_id, bet_amount }) => {
     return (
       <View
@@ -309,7 +322,7 @@ const Body = ({ id, bets, handleRefresh }) => {
 
       try {
         const response = await fetch(
-          "http://10.159.143.121:8080/api/auth/joinBets",
+          "http://172.20.10.9:8080/api/auth/joinBets",
           {
             method: "POST",
             headers: {
@@ -360,7 +373,7 @@ const Body = ({ id, bets, handleRefresh }) => {
             </Text>
           </View>
           <View style={{ flex: 1 }}>
-            <Ionicons name="ios-add-circle" size={24} color="black" />
+            <Ionicons name="add-circle" size={24} color="black" />
           </View>
         </TouchableOpacity>
       </View>
@@ -478,7 +491,12 @@ const Body = ({ id, bets, handleRefresh }) => {
                     </View>
                   )}
                   keyExtractor={(item) => item.id.toString()}
-                  refreshControl={<RefreshControl onRefresh={handleRefresh} />}
+                  refreshControl={
+                    <RefreshControl
+                      refreshing={refreshing}
+                      onRefresh={handleRefresh}
+                    />
+                  }
                 />
               </View>
             ) : (

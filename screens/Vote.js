@@ -59,7 +59,7 @@ export default function Vote({ route, navigation }) {
       userIds: userIds,
     };
 
-    return fetch(`http://10.159.143.121:8080/api/auth/get-user-names`, {
+    return fetch(`http://172.20.10.9:8080/api/auth/get-user-names`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -74,7 +74,7 @@ export default function Vote({ route, navigation }) {
       userIds: userIds,
     };
 
-    return fetch(`http://10.159.143.121:8080/api/auth/get-user-names`, {
+    return fetch(`http://172.20.10.9:8080/api/auth/get-user-names`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -95,7 +95,7 @@ export default function Vote({ route, navigation }) {
     const jsonVoteData = JSON.stringify(voteDto);
 
     try {
-      const response = await fetch("http://10.159.143.121:8080/api/auth/vote", {
+      const response = await fetch("http://172.20.10.9:8080/api/auth/vote", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -158,14 +158,14 @@ export default function Vote({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#5DB075",
+    backgroundColor: "#4dd173",
   },
   header: {
     flex: 1,
     width: "100%",
     justifyContent: "flex-end",
     alignItems: "center",
-    backgroundColor: "#5DB075",
+    backgroundColor: "#4dd173",
   },
   headerText: {
     color: "white",

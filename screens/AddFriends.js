@@ -38,7 +38,7 @@ export default function AddFriends({ navigation }) {
   const fetchAllUsers = async () => {
     try {
       const response = await fetch(
-        "http://10.159.143.121:8080/api/auth/show-users"
+        "http://172.20.10.9:8080/api/auth/show-users"
       );
       if (response.ok) {
         const data = await response.json();
@@ -72,7 +72,7 @@ export default function AddFriends({ navigation }) {
 
     try {
       const response = await fetch(
-        `http://10.159.143.121:8080/api/auth/add-user/${id}/${to_follow_id}`,
+        `http://172.20.10.9:8080/api/auth/add-user/${id}/${to_follow_id}`,
         {
           method: "POST",
           headers: {
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    backgroundColor: "#5DB075",
+    backgroundColor: "#4dd173",
     height: "13.85%",
   },
 

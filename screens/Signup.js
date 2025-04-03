@@ -37,17 +37,14 @@ export default Signup = ({ navigation }) => {
     console.log(jsonUserData);
 
     try {
-      const response = await fetch(
-        "http://10.159.143.121:8080/api/auth/signup",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: jsonUserData,
-        }
-      );
+      const response = await fetch("http://172.20.10.9:8080/api/auth/signup", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: jsonUserData,
+      });
 
       if (!response.ok) {
         throw new Error("User authentication failed");
@@ -90,7 +87,7 @@ export default Signup = ({ navigation }) => {
 
         <View style={styles.inputView}>
           <Ionicons
-            name="ios-person"
+            name="person"
             size={24}
             color="black"
             style={styles.icons}
@@ -198,7 +195,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 35,
-    backgroundColor: "#5DB075",
+    backgroundColor: "#4dd173",
     borderColor: "black",
     borderWidth: 1,
   },

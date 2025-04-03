@@ -24,6 +24,7 @@ export default function Home({ navigation }) {
   const [users, setUsers] = useState([]);
   const [id, setUserID] = useState("");
   const [following, setFollowing] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     AsyncStorage.getItem("id").then((userId) => {
@@ -36,7 +37,7 @@ export default function Home({ navigation }) {
   const fetchFollowingUsers = async () => {
     try {
       const response = await fetch(
-        `http://10.159.143.121:8080/api/auth/show-following/${id}`
+        `http://172.20.10.9:8080/api/auth/show-following/${id}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -59,9 +60,12 @@ export default function Home({ navigation }) {
 
   const handleRefresh = async () => {
     try {
+      setRefreshing(true);
       await fetchFollowingUsers();
     } catch (error) {
-      console.log("Error 3: " + error);
+      console.error("Error refreshing data:", error);
+    } finally {
+      setRefreshing(false);
     }
   };
 
@@ -87,6 +91,7 @@ export default function Home({ navigation }) {
               handleRefresh={handleRefresh}
               viewProfile={viewProfile}
               navigation={navigation}
+              refreshing={refreshing}
             />
           </View>
         </>
@@ -121,7 +126,7 @@ const Header = ({ viewAll }) => {
 
 // ... (existing code)
 
-const Body = ({ following, handleRefresh, viewProfile }) => {
+const Body = ({ following, handleRefresh, viewProfile, refreshing }) => {
   return (
     <View style={{ width: "100%", flex: 1 }}>
       <View style={{ flexDirection: "row" }}>
@@ -141,7 +146,9 @@ const Body = ({ following, handleRefresh, viewProfile }) => {
         style={styles.scrollView}
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false} // Turn off the vertical scroll bar
-        refreshControl={<RefreshControl onRefresh={handleRefresh} />}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+        }
       >
         {following.map((user) => (
           <TouchableOpacity
@@ -193,7 +200,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    backgroundColor: "#5DB075",
+    backgroundColor: "#4dd173",
     width: "100%",
     flex: 1,
   },

@@ -17,6 +17,7 @@ export default function Profile({ navigation }) {
   const [user, setUser] = useState("");
   const [id, setUserID] = useState("");
   const [bets, setBets] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
   //const [idview, setIdView] = useState("");
   //const isSpecial = route.params.isSpecial;
 
@@ -31,8 +32,15 @@ export default function Profile({ navigation }) {
   }, []);
 
   const handleRefresh = async () => {
-    await fetchUser();
-    await fetchBets();
+    try {
+      setRefreshing(true);
+      await fetchUser();
+      await fetchBets();
+    } catch (error) {
+      console.error("Error refreshing data:", error);
+    } finally {
+      setRefreshing(false);
+    }
   };
 
   useEffect(() => {
@@ -45,7 +53,7 @@ export default function Profile({ navigation }) {
   const fetchUser = async () => {
     try {
       const response = await fetch(
-        `http://10.159.143.121:8080/api/auth/user/${id}`
+        `http://172.20.10.9:8080/api/auth/user/${id}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -60,7 +68,7 @@ export default function Profile({ navigation }) {
     }
   };
 
-  const bet_url = `http://10.159.143.121:8080/api/auth/get-bets/${id}`;
+  const bet_url = `http://172.20.10.9:8080/api/auth/get-bets/${id}`;
 
   const fetchBets = async () => {
     try {
@@ -89,6 +97,7 @@ export default function Profile({ navigation }) {
             bets={bets}
             handleRefresh={handleRefresh}
             navigation={navigation}
+            refreshing={refreshing}
           />
         </>
       )}
@@ -199,7 +208,7 @@ const HeaderCard = ({ user, handleRefresh }) => {
   );
 };
 
-const Body = ({ id, bets, handleRefresh, navigation }) => {
+const Body = ({ id, bets, handleRefresh, navigation, refreshing }) => {
   const BetCardHeader = ({ bet_id, bet_amount }) => {
     return (
       <View
@@ -432,7 +441,12 @@ const Body = ({ id, bets, handleRefresh, navigation }) => {
                     </View>
                   )}
                   keyExtractor={(item) => item.id.toString()}
-                  refreshControl={<RefreshControl onRefresh={handleRefresh} />}
+                  refreshControl={
+                    <RefreshControl
+                      refreshing={refreshing}
+                      onRefresh={handleRefresh}
+                    />
+                  }
                 />
               </View>
             ) : (
